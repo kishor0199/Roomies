@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import customerservice from "../../serivces/CustomerService";
 import PhoneService from "../../serivces/PhoneService";
 
-function UpdateCustomer(props) {
+function UpdateCustomer({user}) {
   let id = useParams().id;
   let [customer, setCustomer] = useState({});
 
@@ -48,6 +48,10 @@ function UpdateCustomer(props) {
       state: "",
       email: "",
     });
+
+    if(user.role===2)
+          window.location.replace("http://localhost:3000/customer/");
+    else
     window.location.replace("http://localhost:3000/customer/list");
   }
 
@@ -231,6 +235,7 @@ function UpdateCustomer(props) {
             className="form-control"
             placeholder=""
             aria-describedby="helpId"
+            disabled
             required
           />
         </div>

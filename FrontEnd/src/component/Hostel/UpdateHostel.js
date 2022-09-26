@@ -214,7 +214,7 @@ function Hostel({ user }) {
     <>{!isLoading &&
         <div className="container-fluid mt-3  col-8 border border-black bg-white">
       <div className="mt-4">
-        <h1>New Form</h1>
+        <h1>Update Hostel</h1>
         <label for="" className="form-label ">
           Hostel Name
         </label>

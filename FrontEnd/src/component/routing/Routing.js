@@ -24,14 +24,19 @@ import Profile from "../Customer/Profile";
 import MessageWindow from '../Owner/MessageWindow';
 import HostelByCity from "../Hostel/HostelByCity";
 import FlatByCity from "../Flat/FlatByCity";
+import OwnerHome from "../Owner/OwnerHome";
+import MainHome from "../mainhome";
 const { ProtectedAdminOwnerRoutes, ProtectedAdminUserRoutes, ProtectedOwnerOnlyRoutes, ProtectedUserOnlyRoutes, ProtectedLogInUsersOnlyRoutes } = require("./ProtectedRoutes");
+
 
 
 const Routing = ({ user }) => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<CustomerHome user={user} />} />
+
+        <Route path="/" element={<MainHome user={user} />} />
+        <Route path="/customer" element={<CustomerHome user={user} />} />
         <Route path="/about" element={<About user={user} />} />
         <Route path="/login" element={<Login user={user} />} />
         <Route path="/logout" element={<Logout user={user} />} />

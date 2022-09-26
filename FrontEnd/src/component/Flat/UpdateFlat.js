@@ -200,7 +200,7 @@ function UpdateFlat({ user }) {
 
   return (
     <div className="container-fluid mt-3  col-8 border border-black bg-white">
-      <h1>New Flat Add</h1>
+      <h1>Update Flat</h1>
       <div className="row">
         <div className="mb-3 mt-4 col-2">
           <label for="" className="form-labe  fw-bold">

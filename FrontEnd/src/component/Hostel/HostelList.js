@@ -31,6 +31,7 @@ function HostelList({ user }) {
 
   const deleteHostel = async (id) => {
     let result = await hostelservice.deleteHostel(id);
+    console.log(id);
     window.location.reload();
   }
   return (

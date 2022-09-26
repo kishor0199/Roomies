@@ -28,15 +28,39 @@ function Navbar({ user }) {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              {user && user.role === 2 &&
               <li className="nav-item">
                 <a
                   className="nav-link active fw-bold"
                   aria-current="page"
-                  href="/"
+                  href="/customer"
                 >
                   Home
                 </a>
-              </li>
+              </li>}
+
+              {user && user.role === 1 &&
+              <li className="nav-item">
+                <a
+                  className="nav-link active fw-bold"
+                  aria-current="page"
+                  href="/profile"
+                >
+                  Home
+                </a>
+              </li>}
+
+              {user && user.role === 4 &&
+              <li className="nav-item">
+                <a
+                  className="nav-link active fw-bold"
+                  aria-current="page"
+                  href="/profile"
+                >
+                  Home
+                </a>
+              </li>}
+              
               {user && user.role === 4 &&
                 <li className="nav-item">
                   <a
@@ -111,12 +135,14 @@ function Navbar({ user }) {
                           List
                         </a>
                       </li>}
+
                     {user && user.role === 4 &&
                       <li>
                         <a className="dropdown-item" href="/hostel/list">
                           List
                         </a>
                       </li>}
+                      
                   </ul>
                 </li>
               }
@@ -141,6 +167,18 @@ function Navbar({ user }) {
                     Flats
                   </a>
                 </li>
+              }
+              {
+                 user && user.role === 2 &&
+                <li className="nav-item">
+                <a
+                  className="nav-link fw-bold"
+                  aria-current="page"
+                  href={`/customer/update/${user.id}`}
+                >
+                  Update Your Details
+                </a>
+              </li>
               }
               {user && (user.role === 4 || user.role === 1) &&
                 <li className="nav-item dropdown">
@@ -184,10 +222,18 @@ function Navbar({ user }) {
                 </li>
               }{user && user.role === 1 &&
                 <li>
-                  <a className="nav-link  fw-bold" href="/owner/message">
+                  <a className="nav-link  fw-bold active" href="/owner/message">
                     Messages
                   </a>
                 </li>}
+                {
+                  user && user.role === 1 &&
+                    <li>
+                      <a className="nav-link  fw-bold active" href={`/owner/update/${user.id}`}>
+                         Update Your Details
+                      </a>
+                    </li>
+                  }
             </ul>
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
@@ -196,27 +242,27 @@ function Navbar({ user }) {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link active fw-bold" href="/profile">
+                <a className="nav-link active fw-bold me-2" href="/profile">
                   {user && user.name}
                 </a>
               </li>
               {!user &&
                 <li className="nav-item">
-                  <a className="nav-link active fw-bold" href="/login">
+                  <a className="nav-link active fw-bold btn btn-outline-success me-3" href="/login">
                     Login
                   </a>
                 </li>
               }
               {!user &&
                 <li className="nav-item">
-                  <a className="nav-link active fw-bold" href="/register">
+                  <a className="nav-link active fw-bold btn btn-outline-secondary" href="/register">
                     Register
                   </a>
                 </li>
               }
               {user &&
                 <li className="nav-item">
-                  <a className="nav-link active fw-bold" href="/Logout">
+                  <a className="nav-link active fw-bold btn btn-outline-danger" href="/Logout">
                     Logout
                   </a>
                 </li>

@@ -1,9 +1,10 @@
+import userEvent from "@testing-library/user-event";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ownerservice from "../../serivces/OwnerService";
 import phoneservice from "../../serivces/PhoneService";
 
-function UpdateOwner() {
+function UpdateOwner({user}) {
   let id = useParams().id;
 
   let [owner, setOwner] = useState({});
@@ -45,7 +46,10 @@ function UpdateOwner() {
       state: "",
       email: "",
     });
-    window.location.replace("http://localhost:3000/owner/list");
+    if(user.role===1)
+        window.location.replace("http://localhost:3000/profile/")
+    else
+        window.location.replace("http://localhost:3000/owner/list");
   }
 
   function onChange(e) {
@@ -228,6 +232,7 @@ function UpdateOwner() {
             className="form-control"
             placeholder=""
             aria-describedby="helpId"
+            disabled
             required
           />
         </div>

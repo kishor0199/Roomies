@@ -110,7 +110,7 @@ module.exports.deleteHostelService=(id)=>{
 module.exports.getHostelByOwnerService=(id)=>{
     return new Promise((resolve,reject)=>{
         console.log(id);
-        db.query(`select * from hostel where owner_id= ${id}`,(err,result)=>{
+        db.query(`select * from hostel where owner_id= ${id} and isdeleted=0`,(err,result)=>{
             err?reject(err.message):resolve(result);
         })
     })

@@ -78,16 +78,16 @@ function CustomerHome() {
             src={require("../../images/nagpur.jpg")}
           ></img>
         </a>
-        <a href={`${state}/list/city/pune`} className="col-3 ms-5 mt-3 " >
+        <a href={`${state}/list/city/thane`} className="col-3 ms-5 mt-3 " >
           <img
             className="img-thumbnail bg-transparent shadow-lg p-3 mb-5 bg-white rounded imghover"
-            src={require("../../images/nashik.jpg")}
+            src={require("../../images/thane.jpg")}
           ></img>
         </a >
-        <a href={`${state}/list/city/pune`} className="col-3 ms-5 mt-3 " >
+        <a href={`${state}/list/city/navimumbai`} className="col-3 ms-5 mt-3 " >
           <img
             className="img-thumbnail bg-transparent shadow-lg p-3 mb-5 bg-white rounded imghover"
-            src={require("../../images/nashik.jpg")}
+            src={require("../../images/navimumbai.jpg")}
           ></img>
         </a >
       </div >

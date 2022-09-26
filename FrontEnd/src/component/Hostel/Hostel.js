@@ -146,7 +146,7 @@ function Hostel({ user }) {
   return (
     <div className="container-fluid mt-3  col-8 border border-black bg-white">
       <div className="mt-4">
-        <h1>New Form</h1>
+        <h1>Add New Hostel</h1>
         <label for="" className="form-label ">
           Hostel Name
         </label>
@@ -524,8 +524,5 @@ function Hostel({ user }) {
     </div>
   );
 }
-
-
-
 
 export default Hostel;
