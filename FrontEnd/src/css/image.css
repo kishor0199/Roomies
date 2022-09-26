@@ -1,0 +1,16 @@
+
+.imghover:hover{
+
+    /* border: 3px solid white; */
+    /* opacity: 0.3; */
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+    transform: scale(1.1);
+}
+
+.imghover
+{
+    padding:0;
+    object-fit: cover;
+}
+
+
